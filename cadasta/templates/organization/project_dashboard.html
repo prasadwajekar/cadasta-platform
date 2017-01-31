@@ -1,11 +1,11 @@
 {% extends "organization/project_wrapper.html" %}
 
 {% load i18n %}
-{% load leaflet_tags %}
+<!-- {% load leaflet_tags %} -->
 {% load staticfiles %}
 
 {% block extra_head %}
-{% leaflet_css plugins="groupedlayercontrol"%}
+<!-- {% leaflet_css plugins="groupedlayercontrol"%} -->
 <link rel="stylesheet" href="{% static 'css/MarkerCluster.css' %}">
 <link rel="stylesheet" href="{% static 'css/MarkerCluster.Default.css' %}">
 {% endblock %}
