@@ -31,7 +31,7 @@
 
       <!-- More options menu -->
       {% if is_administrator %}
-      <div class="dropdown pull-right btn-add">
+      <div class="dropdown pull-right btn-add hidden">
         <a data-target="#" data-toggle="dropdown" class="dropdown-toggle visible-xs-inline" role="button" aria-label="{% trans 'More actions' %}">
           <span class="more-menu glyphicon glyphicon-option-vertical"></span>
         </a>
@@ -109,7 +109,7 @@
   <ul class="nav nav-sidebar">
     <li class="search">
       <a href="{% url 'organization:project-dashboard' object.organization.slug object.slug %}">
-        <span class="icon"></span>
+        <span class="icon search"></span>
         <span class="title">{% trans "Search" %}</span>
       </a>
     </li><!-- needed to eliminate spacing issue on horizontal menus
@@ -131,10 +131,24 @@
         <span class="title">{% trans "Resources" %}</span>
       </a>
     </li><!--
+    --><li class="data">
+      <a href="{% url 'organization:project-dashboard' object.organization.slug object.slug %}">
+        <span class="icon glyphicon glyphicon-th-large" style="font-size: 26px;"></span>
+        <span class="title">{% trans "Data" %}</span>
+      </a>
+    </li><!--
     --><li class="overview">
       <a href="{% url 'organization:project-dashboard' object.organization.slug object.slug %}">
         <span class="icon"></span>
         <span class="title">{% trans "About" %}</span>
+      </a>
+    </li>
+  </ul>
+  <ul class="nav nav-sidebar">
+    <li class="settings">
+      <a href="{% url 'organization:project-dashboard' object.organization.slug object.slug %}">
+        <span class="icon setting glyphicon glyphicon-cog" style="font-size: 26px;"></span>
+        <span class="title">{% trans "Settings" %}</span>
       </a>
     </li>
   </ul>
