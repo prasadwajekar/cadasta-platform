@@ -5215,6 +5215,9 @@ ul.resource-actions > li {
 #sidebar li.overview .icon {
   background-image: url("/static/img/icon-overview.png"); }
 
+#sidebar li.search .icon {
+  background-image: url("/static/img/icon-search.png"); }
+
 #sidebar li.map .icon {
   background-image: url("/static/img/icon-map.png"); }
 
@@ -5223,6 +5226,9 @@ ul.resource-actions > li {
 
 #sidebar li.resources .icon {
   background-image: url("/static/img/icon-resources.png"); }
+
+#sidebar li.data .icon {
+  background-image: url("/static/img/icon-data.png"); }
 
 #sidebar li.reports .icon {
   background-image: url("/static/img/icon-reports.png"); }

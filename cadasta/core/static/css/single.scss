@@ -252,6 +252,11 @@
       background-image: url('/static/img/icon-overview.png');
     }
   }
+  li.search {
+    .icon { 
+      background-image: url('/static/img/icon-search.png');
+    }
+  }
   li.map {
     .icon { 
       background-image: url('/static/img/icon-map.png');
@@ -265,6 +270,11 @@
   li.resources {
     .icon { 
       background-image: url('/static/img/icon-resources.png');
+    }
+  }
+  li.data {
+    .icon { 
+      background-image: url('/static/img/icon-data.png');
     }
   }
   li.reports {
