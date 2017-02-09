@@ -369,10 +369,15 @@ main.container-fluid {
     }
     h4 {
       font-family: $font-family-sans-serif-alt;
-      text-transform: uppercase;
-      opacity: 0.8;
+      //text-transform: uppercase;
+      //opacity: 0.8;
       letter-spacing: 0;
       padding-top: 10px;
+      .size {
+        font-size: 12px;
+        color: $gray-medium;
+        font-weight: normal;
+      }
     }
     .glyphicon-globe, .glyphicon-envelope, .glyphicon-earphone { // url and contacts in overview
       opacity: 0.7;

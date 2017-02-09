@@ -60,9 +60,71 @@
 <div class="col-md-12 content-single">
   <div class="row">
     <!-- Start overview map  -->
-    <div class="col-sm-12 map">
+    <div class="col-md-8 map">
       {% leaflet_map "project-map" callback="locations_map_init" %}
     </div>
+    <!-- / end overview map -->
+    <!-- Overview detail  -->
+    <div class="col-md-4 detail">
+      <section>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Locations</a></li>
+          <li role="presentation"><a href="#relationships" aria-controls="relationships" role="tab" data-toggle="tab">Parties</a></li>
+        </ul>
+        <div class="page-title">
+          <div class="tab-content">
+            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+              <table class="table table-hover datatable dataTable no-footer" data-paging-type="simple" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                <thead>
+                  <tr role="row">
+                    <th class="col-md-12 sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Location type: activate to sort column descending">Location Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <span class="glyphicon glyphicon-map-marker"></span>
+                      <h4><a href="">Apartment</a> <span class="size">456 m<sup>2</sup></span></h4>
+                      <p class="small">Leasehold &middot; Chief Sonieky</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="glyphicon glyphicon-map-marker"></span>
+                      <h4><a href="">Building</a> <span class="size">856 m<sup>2</sup></span></h4>
+                      <p class="small">Longterm Leasehold &middot; Congregation de Santos</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="glyphicon glyphicon-map-marker"></span>
+                      <h4><a href="">Building</a> <span class="size">7.3 ha<sup>2</sup></span></h4>
+                      <p class="small">Leasehold &middot; Chief Sonieky</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="glyphicon glyphicon-map-marker"></span>
+                      <h4><a href="">Parcel</a> <span class="size">5.9 ha</span></h4>
+                      <p class="small">Hunting/Fishing/Harvest Rights &middot; Congregation de Santos</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="glyphicon glyphicon-map-marker"></span>
+                      <h4><a href="">Right-of-way</a> <span class="size">3.8 ha</span></h4>
+                      <p class="small">Easement &middot; Chief Sonieky</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /location index -->
+        </div>
+      </section>
+    </div>
+    <!-- / overview detail -->
+    <!-- Start detail  -->
   </div>
 </div>
 

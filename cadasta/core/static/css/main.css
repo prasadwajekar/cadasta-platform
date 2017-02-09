@@ -4029,7 +4029,7 @@ header {
             background: #0e305e; }
   header .btn-help {
     border-radius: 0;
-    padding-top: 28px;
+    padding-top: 24px;
     min-width: 60px;
     height: 60px;
     border: none;
@@ -4920,8 +4920,8 @@ ul.resource-actions > li {
 #organization-single .page-header {
   display: table;
   background: #0e305e;
-  height: 110px;
-  min-height: 110px;
+  height: 100px;
+  min-height: 100px;
   border-bottom: solid 1px #fff;
   margin: 0;
   padding-top: 0;
@@ -4945,6 +4945,9 @@ ul.resource-actions > li {
     #organization-single .page-header .page-title > div {
       display: table-cell;
       vertical-align: middle; }
+    #project-single .page-header .page-title .back-link,
+    #organization-single .page-header .page-title .back-link {
+      width: 60px; }
     #project-single .page-header .page-title .index-link,
     #organization-single .page-header .page-title .index-link {
       padding: 4px 10px;
@@ -5083,7 +5086,7 @@ ul.resource-actions > li {
       vertical-align: middle; }
       #project-single .page-header .page-title .top-btn .btn-add,
       #organization-single .page-header .page-title .top-btn .btn-add {
-        margin-right: 14px; }
+        margin-right: 24px; }
 
 @media (max-width: 991px) {
   #project-single .page-header,
@@ -5944,10 +5947,12 @@ main.container-fluid {
       padding-top: 20px; }
     .content-single .detail h4 {
       font-family: "Roboto Condensed", "Roboto", Helvetica, "Noto Sans Bengali", sans-serif;
-      text-transform: uppercase;
-      opacity: 0.8;
       letter-spacing: 0;
       padding-top: 10px; }
+      .content-single .detail h4 .size {
+        font-size: 12px;
+        color: #a6a7a8;
+        font-weight: normal; }
     .content-single .detail .glyphicon-globe, .content-single .detail .glyphicon-envelope, .content-single .detail .glyphicon-earphone {
       opacity: 0.7;
       padding-right: 12px; }
