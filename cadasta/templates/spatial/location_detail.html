@@ -7,6 +7,7 @@
 {% block location_panel %}
 
 <div class="col-md-4 detail">
+  <div class="top-bar"><a href="" class="small">< Return to index</a></div>
   <section>
     <div class="page-title">
       <h2><span>{% trans "Location" %} </span>{{ location.name }}</h2>
@@ -19,15 +20,21 @@
 
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">{% trans "Overview" %}</a></li>
-      <li role="presentation"><a href="#relationships" aria-controls="relationships" role="tab" data-toggle="tab">{% trans "Relationships" %}</a></li>
-      <li role="presentation"><a  href="#resources" aria-controls="resources" role="tab" data-toggle="tab">{% trans "Resources" %}</a></li>
+      <li role="presentation"><a href="#relationships" aria-controls="relationships" role="tab" data-toggle="tab">{% trans "Relationships" %} <span class="badge">1</span></a></li>
+      <li role="presentation"><a  href="#resources" aria-controls="resources" role="tab" data-toggle="tab">{% trans "Resources" %} <span class="badge">3</span></a></li>
     </ul>
 
     <div class="tab-content">
       <!-- Overview tab -->
       <div role="tabpanel" class="tab-pane active" id="overview">
-        <table class="table table-location">
-          <tbody>
+        <table id="raw" class="table table-location datatable nofooter">
+          <thead>
+                <tr>
+                  <th>{% trans "Label" %}</th>
+                  <th>{% trans "Response" %}</th>
+                </tr>
+              </thead>
+            <tbody>
             <tr>
               <td class="col-md-4"><label>{% trans "Type" %}</label></td>
               <td class="col-md-8">{{ location.get_type_display }}</td>

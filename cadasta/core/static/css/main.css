@@ -2141,8 +2141,8 @@ table {
   background-color: transparent; }
 
 caption {
-  padding-top: 12px 24px;
-  padding-bottom: 12px 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   color: #d9dadb;
   text-align: left; }
 
@@ -2159,7 +2159,7 @@ th {
   .table > tbody > tr > td,
   .table > tfoot > tr > th,
   .table > tfoot > tr > td {
-    padding: 12px 24px;
+    padding: 12px;
     line-height: 1.42857;
     vertical-align: top;
     border-top: 1px solid #e7e8ea; }
@@ -3937,7 +3937,7 @@ body.tinted-bg {
 header {
   z-index: 1000;
   position: relative;
-  height: 60px;
+  height: 50px;
   background-color: #2e51a3;
   -webkit-box-shadow: 0 1px 4px rgba(31, 54, 79, 0.2);
   -moz-box-shadow: 0 1px 4px rgba(31, 54, 79, 0.2);
@@ -3946,7 +3946,7 @@ header {
     top: 0; }
   header #logo {
     display: inline-block;
-    line-height: 60px;
+    line-height: 50px;
     font-size: 22px;
     margin: 0 auto;
     padding: 0; }
@@ -3956,11 +3956,11 @@ header {
   header .nav {
     display: inline-block;
     float: right;
-    height: 53px; }
+    height: 45px; }
     header .nav ul.list-inline {
       margin-bottom: 0; }
       header .nav ul.list-inline > li {
-        border-top: solid 7px #2e51a3;
+        border-top: solid 5px #2e51a3;
         padding-left: 0;
         padding-right: 0; }
         header .nav ul.list-inline > li:hover, header .nav ul.list-inline > li a:hover, header .nav ul.list-inline > li a:focus {
@@ -4017,8 +4017,8 @@ header {
             color: #345bb7;
             background-color: #fff; }
         header .nav ul.list-inline > li a {
-          line-height: 53px;
-          height: 53px;
+          line-height: 45px;
+          height: 45px;
           color: #d9dadb;
           padding-left: 24px;
           padding-right: 24px;
@@ -4029,9 +4029,9 @@ header {
             background: #0e305e; }
   header .btn-help {
     border-radius: 0;
-    padding-top: 24px;
-    min-width: 60px;
-    height: 60px;
+    padding-top: 18px;
+    min-width: 50px;
+    height: 50px;
     border: none;
     font-size: 13px;
     color: #eeeeee;
@@ -4121,8 +4121,8 @@ header {
       height: 32px; }
   header .btn-hamburger > a {
     display: block;
-    min-width: 60px;
-    height: 60px;
+    min-width: 50px;
+    height: 50px;
     border: none;
     text-align: center;
     padding-top: 24px;
@@ -4273,7 +4273,7 @@ header {
 #organizations .nav li.organizations,
 #organization-single .nav li.organizations,
 #users .nav li.users {
-  border-top: solid 7px #edaa00; }
+  border-top: solid 5px #edaa00; }
   #projects .nav li.projects a,
   #project-single .nav li.projects a,
   #project-wizard .nav li.projects a,
@@ -4309,7 +4309,7 @@ header {
   border-left: solid 1px #345bb7; }
 
 .reg-links div.divider {
-  height: 60px;
+  height: 50px;
   min-width: 22px; }
 
 .reg-links .dropdown-menu {
@@ -4326,7 +4326,7 @@ header {
   min-width: 224px;
   min-width: 160px;
   max-width: 300px;
-  height: 60px;
+  height: 50px;
   border: none;
   font-size: 13px;
   color: #eeeeee;
@@ -4920,14 +4920,14 @@ ul.resource-actions > li {
 #organization-single .page-header {
   display: table;
   background: #0e305e;
-  height: 100px;
-  min-height: 100px;
+  height: 90px;
+  min-height: 90px;
   border-bottom: solid 1px #fff;
   margin: 0;
   padding-top: 0;
   padding-bottom: 0;
   position: fixed;
-  top: 60px;
+  top: 50px;
   z-index: 999; }
   #project-single .page-header div > a,
   #organization-single .page-header div > a {
@@ -5212,6 +5212,9 @@ ul.resource-actions > li {
         white-space: nowrap;
         overflow-x: hidden; }
 
+#sidebar .nav-sidebar > li.search .icon {
+  height: 36px; }
+
 #sidebar li.overview .icon {
   background-image: url("/static/img/icon-overview.png"); }
 
@@ -5388,6 +5391,41 @@ ul.resource-actions > li {
   padding: 4px 4px 5px; }
   #project-map .btn-wrap .btn-block {
     margin: 0 auto; }
+
+/* =Map interaction prototype
+-------------------------------------------------------------- */
+/*.leaflet-zoom-animated g:nth-of-type(3n) path {
+  fill: red;
+}*/
+.top-bar {
+  background: #0e305e;
+  height: 40px;
+  padding: 12px; }
+  .top-bar a {
+    color: #fff; }
+
+.content-single .detail {
+  padding: 0 !important; }
+  .content-single .detail .top-bar {
+    background: #0e305e;
+    height: 40px;
+    padding: 12px; }
+    .content-single .detail .top-bar a {
+      color: #fff; }
+  .content-single .detail section {
+    margin: 24px; }
+  .content-single .detail table > tbody > tr > td, .content-single .detail .table > tfoot > tr > th, .content-single .detail .table > tfoot > tr > td {
+    padding: 12px; }
+  .content-single .detail td .glyphicon-map-marker {
+    float: left;
+    display: inline-block;
+    padding-top: 12px;
+    width: 20px; }
+  .content-single .detail .badge {
+    font-weight: normal;
+    font-size: 10px;
+    background: #a6a7a8;
+    opacity: 0.8; }
 
 /* =Forms
 -------------------------------------------------------------- */
@@ -5793,7 +5831,7 @@ body.tinted-bg #page-content {
   margin: 0 auto;
   padding: 0;
   position: absolute;
-  top: 160px;
+  top: 140px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -5804,7 +5842,7 @@ body.tinted-bg #page-content {
 #dashboard #page-content,
 #project-wizard.page #page-content,
 #registration #page-content {
-  top: 60px; }
+  top: 50px; }
 
 @media (max-width: 1199px) {
   #projects #page-content,
@@ -5944,11 +5982,18 @@ main.container-fluid {
         border-bottom: 0;
         padding-bottom: 6px; }
     .content-single .detail .nav-tabs li > a {
-      font-size: 13px;
-      padding: 10px; }
+      font-family: "Roboto Condensed", "Roboto", Helvetica, "Noto Sans Bengali", sans-serif;
+      padding: 10px;
+      border-radius: 0;
+      background: #f2f4f7; }
+      .content-single .detail .nav-tabs li > a:hover, .content-single .detail .nav-tabs li > a a:hover, .content-single .detail .nav-tabs li > a a:focus {
+        border-top: solid 4px #edaa00;
+        transition: all 0.3s ease 0s; }
     .content-single .detail .nav-tabs li.active > a, .content-single .detail .nav-tabs li.active > a:hover, .content-single .detail .nav-tabs li.active > a:focus {
       border-color: #e7e8ea;
-      border-bottom-color: transparent; }
+      border-bottom-color: transparent;
+      background: #fff;
+      border-top: solid 4px #edaa00; }
     .content-single .detail section > p:first-child {
       padding-top: 20px; }
     .content-single .detail h4 {
@@ -6150,8 +6195,7 @@ table.table-location {
   table.table-location tr:first-child td {
     border-top: none; }
   table.table-location label {
-    text-transform: uppercase;
-    font-size: 12px; }
+    font-weight: bold; }
 
 table#select-list {
   border-bottom-width: 1px;

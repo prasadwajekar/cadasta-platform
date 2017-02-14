@@ -169,7 +169,7 @@ body.tinted-bg #page-content { // for bg image
   margin: 0 auto;
   padding: 0;
   position: absolute;
-  top: 160px;
+  top: 140px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -356,12 +356,21 @@ main.container-fluid {
     }
     .nav-tabs {
       li > a {
-        font-size: 13px;
+        font-family: $font-family-sans-serif-alt;
         padding: 10px;
+        border-radius: 0;
+        background: $body-bg;
+        &:hover, a:hover, a:focus {
+          //@include button-variant(#fff, lighten($btn-blue-bg, 5%), $brand-gold);
+          border-top: solid 4px $brand-gold;
+          transition: all 0.3s ease 0s;
+        }
       }
       li.active > a, li.active > a:hover, li.active > a:focus {
         border-color: $table-border-color;
         border-bottom-color: transparent;
+        background: #fff;
+        border-top: solid 4px $brand-gold;
       }
     }
     section > p:first-child {
@@ -654,8 +663,9 @@ table.table-location { // location details in map area
     border-top: none;
   }
   label {
-    text-transform: uppercase;
-    font-size: 12px;
+    //text-transform: uppercase;
+    //font-size: 12px;
+    font-weight: bold;
   }
 }
 

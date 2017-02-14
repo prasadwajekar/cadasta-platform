@@ -95,8 +95,8 @@
 #organization-single .page-header { // navy band on pages for single project or organization
   display: table;
   background: $brand-darkblue;
-  height: 100px;
-  min-height: 100px;
+  height: 90px;
+  min-height: 90px;
   border-bottom: solid 1px #fff;
   margin: 0;
   padding-top: 0;
@@ -244,6 +244,10 @@
       }
     }
   }
+}
+
+#sidebar .nav-sidebar > li.search .icon {
+  height: 36px;
 }
 
 #sidebar {
@@ -468,3 +472,49 @@
     }
   }
 }
+
+/* =Map interaction prototype
+-------------------------------------------------------------- */
+
+/*.leaflet-zoom-animated g:nth-of-type(3n) path {
+  fill: red;
+}*/
+.top-bar {
+  background: $brand-darkblue;
+  height: 40px;
+  padding: 12px;
+  a {
+    color: #fff;
+  }
+}
+.content-single .detail {
+  padding: 0 !important;
+  .top-bar {
+    background: $brand-darkblue;
+    height: 40px;
+    padding: 12px;
+    a {
+      color: #fff;
+    }
+  }
+  section {
+    margin: 24px;
+  }
+  table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+    padding: 12px;
+  } 
+  td .glyphicon-map-marker {
+    float: left;
+    display: inline-block;
+    //height: 60px;
+    padding-top: 12px;
+    width: 20px;
+  }
+  .badge {
+    font-weight: normal;
+    font-size: 10px;
+    background: $gray-medium;
+    opacity: 0.8;
+  }
+}
+

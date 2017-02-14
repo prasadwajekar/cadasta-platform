@@ -41,6 +41,15 @@
     add_spatial_resources(map, url);
   }
 </script>
+
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").toggle();
+    });
+});
+</script>
+
 {% endblock %}
 
 {% block extra_head %}
@@ -58,6 +67,24 @@
 {% block content %}
 
 <div class="col-md-12 content-single">
+  <div class="top-bar">
+    <label><div class="input-group"><span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span><input class="form-control input-sm" placeholder="Search" aria-controls="DataTables_Table_0" type="search"></div></label>
+    <div class-"form-control">
+      <label>Location type</label>
+      <select>All</select>
+    </div>
+    <div class="form-control">
+      <label>Tenure type</label>
+      <select>All</select>
+    </div>
+    <div class="form-control">
+      <label>Party name</label>
+      <select>All</select>
+    </div>
+    <button class="btn btn-default" title="Apply filtes"></button>
+    <button class="btn btn-link" title="Remove filters"></button>
+
+  </div>
   <div class="row">
     <!-- Start overview map  -->
     <div class="col-md-8 map">
@@ -66,6 +93,12 @@
     <!-- / end overview map -->
     <!-- Overview detail  -->
     <div class="col-md-4 detail">
+    <div class="top-bar">
+      <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Locations</a></li>
+          <li role="presentation"><a href="#relationships" aria-controls="relationships" role="tab" data-toggle="tab">Parties</a></li>
+        </ul>
+    </div>
       <section>
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Locations</a></li>
@@ -84,36 +117,42 @@
                   <tr>
                     <td>
                       <span class="glyphicon glyphicon-map-marker"></span>
-                      <h4><a href="">Apartment</a> <span class="size">456 m<sup>2</sup></span></h4>
-                      <p class="small">Leasehold &middot; Chief Sonieky</p>
+                      <div class="pull-left"><h4><a href="/organizations/habitat-for-humanity/projects/pekapuran-laut/records/locations/qsm4iz7tz3juue8wyrbk3z7y/">Apartment</a> <span class="size">456 m<sup>2</sup></span></h4>
+                      <p class="small">Leasehold &middot; Chief Sonieky</p></div>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <span class="glyphicon glyphicon-map-marker"></span>
-                      <h4><a href="">Building</a> <span class="size">856 m<sup>2</sup></span></h4>
-                      <p class="small">Longterm Leasehold &middot; Congregation de Santos</p>
+                      <div class="pull-left"><h4><a href="">Building</a> <span class="size">856 m<sup>2</sup></span></h4>
+                      <p class="small">Longterm Leasehold &middot; Congregation de Santos</p></div>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <span class="glyphicon glyphicon-map-marker"></span>
-                      <h4><a href="">Building</a> <span class="size">7.3 ha<sup>2</sup></span></h4>
-                      <p class="small">Leasehold &middot; Chief Sonieky</p>
+                      <div class="pull-left"><h4><a href="">Building</a> <span class="size">7.3 ha<sup>2</sup></span></h4>
+                      <p class="small">Leasehold &middot; Chief Sonieky</p></div>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <span class="glyphicon glyphicon-map-marker"></span>
-                      <h4><a href="">Parcel</a> <span class="size">5.9 ha</span></h4>
-                      <p class="small">Hunting/Fishing/Harvest Rights &middot; Congregation de Santos</p>
+                      <div class="pull-left"><h4><a href="">Parcel</a> <span class="size">5.9 ha</span></h4>
+                      <p class="small">Hunting/Fishing/Harvest Rights &middot; Congregation de Santos</p></div>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <span class="glyphicon glyphicon-map-marker"></span>
-                      <h4><a href="">Right-of-way</a> <span class="size">3.8 ha</span></h4>
-                      <p class="small">Easement &middot; Chief Sonieky</p>
+                      <div class="pull-left"><h4><a href="">Miscellaneous</a> <span class="size">1m<sup>2</sup></span></h4></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="glyphicon glyphicon-map-marker"></span>
+                      <div class="pull-left"><h4><a href="">Right-of-way</a> <span class="size">3.8 ha</span></h4>
+                      <p class="small">Easement &middot; Chief Sonieky</p></div>
                     </td>
                   </tr>
                 </tbody>
