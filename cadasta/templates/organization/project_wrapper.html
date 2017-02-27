@@ -13,11 +13,6 @@
 <!-- Single project header -->
 <div class="header page-header">
   <div class="page-title">
-    <div class="back-link">
-      <a class="index-link visible-md-inline visible-lg-inline" href="{% url 'project:list' %}">
-        <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
-      </a>
-    </div>
     <h1 class="{% if is_administrator or is_allowed_add_location or is_allowed_add_resource %}short{% endif %}">
       <a href="{% url 'organization:dashboard' slug=object.organization.slug %}" class="org-name">
         {{ object.organization.name }}
@@ -56,8 +51,11 @@
         <ul class="dropdown-menu" aria-labelledby="dLabel">
           <li><a class="edit" href="{% url 'organization:project-edit-details' object.organization.slug object.slug %}">{% trans "Edit project details" %}</a></li>
           <li><a class="edit" href="{% url 'organization:project-edit-geometry' object.organization.slug object.slug %}">{% trans "Edit project map" %}</a></li>
-          <li><a class="edit" href="{% url 'organization:project-edit-permissions' object.organization.slug object.slug %}">{% trans "Edit data schema" %}</a></li>
-          <li><a class="edit" href="{% url 'organization:project-edit-permissions' object.organization.slug object.slug %}">{% trans "Edit member permissions" %}</a></li>
+          <li><a class="edit" href="{% url 'organization:project-edit-permissions' object.organization.slug object.slug %}">{% trans "Edit data design" %}</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a class="edit" href="{% url 'organization:project-edit-permissions' object.organization.slug object.slug %}">{% trans "Add team member" %}</a>
+          <li><a class="edit" href="{% url 'organization:project-edit-permissions' object.organization.slug object.slug %}">{% trans "Edit team permissions" %}</a></li>
+          <li role="separator" class="divider hidden"></li>
           <li role="separator" class="divider hidden"></li>
           <li class="hidden"><a href="{% url 'organization:project-import' object.organization.slug object.slug %}" data-toggle="modal">{% trans "Import data" %}</a></li>
           <li class="hidden"><a href="{% url 'organization:project-download' object.organization.slug object.slug %}" data-toggle="modal">{% trans "Download data" %}</a></li>
@@ -128,7 +126,7 @@
 <!-- Sidebar -->
 <div id="sidebar" class="{% block left-nav %}{% endblock %}">
   <ul class="nav nav-sidebar">
-    <li class="search">
+    <li class="search hidden">
       <a href="#">
         <span class="icon search"></span>
       </a>
@@ -142,7 +140,7 @@
     --><li class="map">
       <a href="{% url 'locations:list' object.organization.slug object.slug %}">
         <span class="icon map"></span>
-        <span class="title">{% trans "Map" %}</span>
+        <span class="title">{% trans "Data" %}</span>
       </a>
     </li><!--
     --><li class="parties hidden">
@@ -151,16 +149,22 @@
         <span class="title">{% trans "Parties" %}</span>
       </a>
     </li><!--
-    --><li class="data">
-      <a href="#">
-        <span class="icon data"></span>
-        <span class="title">{% trans "Collect" %}</span>
-      </a>
-    </li><!--
     --><li class="resources">
       <a href="{% url 'resources:project_list' object.organization.slug object.slug %}">
         <span class="icon resources"></span>
         <span class="title">{% trans "Resources" %}</span>
+      </a>
+    </li><!--
+    --><li class="data">
+      <a href="{% url 'parties:list' object.organization.slug object.slug %}">
+        <span class="icon data"></span>
+        <span class="title">{% trans "Forms" %}</span>
+      </a>
+    </li><!--
+    --><li class="reports">
+      <a href="{% url 'parties:list' object.organization.slug object.slug %}">
+        <span class="icon data"></span>
+        <span class="title">{% trans "Reports" %}</span>
       </a>
     </li>
   </ul>

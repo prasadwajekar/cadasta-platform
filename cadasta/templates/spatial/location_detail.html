@@ -7,7 +7,7 @@
 {% block location_panel %}
 
 <div class="col-md-4 detail">
-  <div class="top-bar"><a href="" class="small">< Return to index</a></div>
+  <div class="top-bar"><a href="{% url 'locations:list' object.organization.slug object.slug %}" class="small">< Return to index</a></div>
   <section>
     <div class="page-title">
       <h2><span>{% trans "Location" %} </span>{{ location.name }}</h2>
