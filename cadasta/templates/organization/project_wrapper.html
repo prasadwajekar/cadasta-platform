@@ -11,7 +11,7 @@
 {% block page-header %}
 
 <!-- Single project header -->
-<div class="header page-header">
+<div class="header page-header hidden">
   <div class="page-title">
     <h1 class="{% if is_administrator or is_allowed_add_location or is_allowed_add_resource %}short{% endif %}">
       <a href="{% url 'organization:dashboard' slug=object.organization.slug %}" class="org-name">
