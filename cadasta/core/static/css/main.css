@@ -3937,7 +3937,7 @@ body.tinted-bg {
 header {
   z-index: 1000;
   position: relative;
-  height: 50px;
+  height: 40px;
   background-color: #2e51a3;
   -webkit-box-shadow: 0 1px 4px rgba(31, 54, 79, 0.2);
   -moz-box-shadow: 0 1px 4px rgba(31, 54, 79, 0.2);
@@ -3946,7 +3946,7 @@ header {
     top: 0; }
   header #logo {
     display: inline-block;
-    line-height: 50px;
+    line-height: 40px;
     font-size: 22px;
     margin: 0 auto;
     padding: 0; }
@@ -3956,7 +3956,7 @@ header {
   header .nav {
     display: inline-block;
     float: right;
-    height: 45px; }
+    height: 35px; }
     header .nav ul.list-inline {
       margin-bottom: 0; }
       header .nav ul.list-inline > li {
@@ -4017,8 +4017,8 @@ header {
             color: #345bb7;
             background-color: #fff; }
         header .nav ul.list-inline > li a {
-          line-height: 45px;
-          height: 45px;
+          line-height: 35px;
+          height: 35px;
           color: #d9dadb;
           padding-left: 24px;
           padding-right: 24px;
@@ -4030,8 +4030,8 @@ header {
   header .btn-help {
     border-radius: 0;
     padding-top: 18px;
-    min-width: 50px;
-    height: 50px;
+    min-width: 40px;
+    height: 40px;
     border: none;
     font-size: 13px;
     color: #eeeeee;
@@ -4121,8 +4121,8 @@ header {
       height: 32px; }
   header .btn-hamburger > a {
     display: block;
-    min-width: 50px;
-    height: 50px;
+    min-width: 40px;
+    height: 40px;
     border: none;
     text-align: center;
     padding-top: 24px;
@@ -4309,7 +4309,7 @@ header {
   border-left: solid 1px #345bb7; }
 
 .reg-links div.divider {
-  height: 50px;
+  height: 40px;
   min-width: 22px; }
 
 .reg-links .dropdown-menu {
@@ -4326,7 +4326,7 @@ header {
   min-width: 224px;
   min-width: 160px;
   max-width: 300px;
-  height: 50px;
+  height: 40px;
   border: none;
   font-size: 13px;
   color: #eeeeee;
@@ -4927,7 +4927,7 @@ ul.resource-actions > li {
   padding-top: 0;
   padding-bottom: 0;
   position: fixed;
-  top: 50px;
+  top: 40px;
   z-index: 999; }
   #project-single .page-header div > a,
   #organization-single .page-header div > a {
@@ -5956,7 +5956,7 @@ body.tinted-bg #page-content {
 #dashboard #page-content,
 #project-wizard.page #page-content,
 #registration #page-content {
-  top: 50px; }
+  top: 40px; }
 
 @media (max-width: 1199px) {
   #projects #page-content,
