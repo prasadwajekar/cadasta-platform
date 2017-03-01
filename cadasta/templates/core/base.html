@@ -30,7 +30,7 @@
           <div id="logo" class="pull-left">
             <a href="/"><img src="{% static 'img/logo-white.png' %}" /></a>
           </div>
-          <div class="page-title" style="clear: none; border-left: solid 1px #345bb7; display: inline-block; min-width: 600px; padding: 10px 20px 0; margin-left: 20px;height: 66px; overflow: hidden;">
+          <div class="page-title" style="clear: none; border-left: solid 1px #345bb7; display: inline-block; min-width: 600px; padding: 10px 20px 0; margin-left: 20px;height: 74px; overflow: hidden;">
             <h1>
               <a href="{% url 'organization:dashboard' slug=object.organization.slug %}" class="org-name" style="padding-bottom: 0;">
                 {{ object.organization.name }}
@@ -187,7 +187,7 @@
       <!-- /.header -->
       {% block page-header %}{% endblock %}
       <!-- Page content -->
-      <div id="page-content">
+      <div id="page-content" style="top: 76px;">
         {% block sub-nav %}{% endblock %}
         <main class="container-fluid{% block main-width %}{% endblock %}" role="main">
           <div id="messages">
