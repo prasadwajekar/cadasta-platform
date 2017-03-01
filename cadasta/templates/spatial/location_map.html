@@ -128,28 +128,40 @@ $(document).ready(function(){
 {% block content %}
 
 <div class="col-md-12 content-single">
-  <div class="top-search">
-    <label class="pull-left" style="width: 15%;"><div class="input-group"><span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span><input class="form-control input-sm" placeholder="Search" aria-controls="DataTables_Table_0" type="search"></div></label>
-    <div class="form-control pull-left" style="width: 15%;">
-      <label>Location type</label>
-      <select>All</select>
+  <div class="top-search header page-header" style="border-left: solid 1px #fff; position: relative; top: 0; height: 44px; min-height: 44px; padding-top: 8px;">
+    <label class="pull-left" style="width: 15%;"><div class="input-group" style="padding: 0 10px 0 20px; height: 24px; line-height: 24px; "><span class="input-group-addon" style="padding: 2px 12px;
+font-size: 13px;" ><span class="glyphicon glyphicon-search" style="font-size: 12px;"></span></span><input class="form-control input-sm" style="height: 26px; line-height: 26px;" placeholder="Search records" aria-controls="DataTables_Table_0" type="search"></div></label>
+    <div class="pull-left" style="font-family: Roboto Condensed; color:#fff; padding: 2px 6px 0 10px;">FILTER BY</div>
+    <div class="pull-left" style="width: 12%; padding-right: 10px;">
+      <label style="display: none; color: #eee; font-size: 12px; float: left;">Location</label>
+      <select class="form-control input-sm" style="height: 26px; line-height: 26px; padding: 0px 10px;"><option>All location types</option>
+      </select>
     </div>
-    <div class="form-control pull-left" style="width: 15%;">
-      <label>Tenure type</label>
-      <select>All</select>
+    <div class="pull-left" style="width: 12%; padding-right: 10px;">
+      <label style="display: none; color: #eee; font-size: 12px; float: left;">Tenure</label>
+      <select class="form-control input-sm" style="padding: 0px 10px; height: 26px; line-height: 26px; ">
+        <option>All tenure types</option>
+      </select>
     </div>
-    <div class="form-control pull-left" style="width: 15%;">
-      <label>Party name</label>
-      <select>All</select>
+    <div class="pull-left" style="width: 12%; padding-right: 10px;">
+      <label style="display: none; color: #eee; font-size: 12px; float: left;">Party</label>
+      <select class="form-control input-sm" style="height: 26px; line-height: 26px; padding: 0px 10px;"><option>All parties</option>
+      </select>
     </div>
-    <button class="btn btn-default pull-left" title="Apply filters"  style="width: 5%;"></button>
-    <button class="btn btn-link pull-left" title="Remove filters"  style="width: 5%;"></button>
-    <div class="btn-toolbar pull-right" role="toolbar" style="width: 15%;">
-      <div class="btn-group" role="group" aria-label="...">...</div>
-      <div class="btn-group" role="group" aria-label="...">...</div>
-      <div class="btn-group" role="group" aria-label="...">...</div>
+    <div class="pull-left">
+      <button type="button" class="btn btn-primary btn-sm pull-left" style="padding: 4px 10px;">Apply filters</button>
+      <button type="button" class="btn btn-link btn-sm pull-left" style="color: #ccc; padding: 4px 10px">Reset</button>
+    </div>
+    <div class="pull-left" style="color: #fff; padding: 4px 10px;">
+      <strong>5</strong> records showing
+    </div>
+    <div class="btn-group btn-group-xs pull-right" role="toolbar" style="padding-right: 20px;">
+      <button type="button" class="btn btn-default" style="background: transparent; height: 28px; border-color: #999;"><img src="/static/img/icon-map2.png" style="width: 22px; padding: 4px;"></button>
+      <button type="button" class="btn btn-default" style="background: transparent; height: 28px; border-color: #999;"><img src="/static/img/icon-split-green.png" style="width: 22px; padding: 4px;"></button>
+      <button type="button" class="btn btn-default" style="background: transparent; height: 28px; border-color: #999;"><img src="/static/img/icon-table.png" style="width: 22px; padding: 4px;"></button>
     </div>
   </div>
+
   <div class="row">
     <!-- Start overview map  -->
     <div class="col-md-12 map">

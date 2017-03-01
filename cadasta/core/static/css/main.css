@@ -5429,7 +5429,8 @@ ul.resource-actions > li {
     opacity: 0.8; }
 
 #test {
-  position: absolute; }
+  position: absolute;
+  top: 43px; }
 
 .sidebar {
   z-index: 999999;
@@ -5945,7 +5946,7 @@ body.tinted-bg #page-content {
   margin: 0 auto;
   padding: 0;
   position: absolute;
-  top: 140px;
+  top: 130px;
   left: 0;
   right: 0;
   bottom: 0;
