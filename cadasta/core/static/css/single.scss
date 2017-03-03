@@ -95,8 +95,8 @@
 #organization-single .page-header { // navy band on pages for single project or organization
   display: table;
   background: $brand-darkblue;
-  height: 90px;
-  min-height: 90px;
+  height: 80px;
+  min-height: 80px;
   border-bottom: solid 1px #fff;
   margin: 0;
   padding-top: 0;
@@ -480,22 +480,14 @@
 /*.leaflet-zoom-animated g:nth-of-type(3n) path {
   fill: red;
 }*/
-.top-bar {
-  background: $brand-darkblue;
-  height: 40px;
-  padding: 12px;
-  a {
-    color: #fff;
-  }
-}
 .content-single .detail {
   padding: 0 !important;
   .top-bar {
-    background: $brand-darkblue;
-    height: 40px;
-    padding: 12px;
+    //background: $brand-darkblue;
+    //height: 40px;
+    padding: 4px 12px 0 12px;
     a {
-      color: #fff;
+      //color: #fff;
     }
   }
   section {
@@ -522,7 +514,7 @@
 
 #test {
   position: absolute;
-  top: 43px;
+  top: 49px;
 }
 .sidebar {
     z-index: 999999;

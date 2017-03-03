@@ -169,7 +169,7 @@ body.tinted-bg #page-content { // for bg image
   margin: 0 auto;
   padding: 0;
   position: absolute;
-  top: 130px;
+  top: 120px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -360,6 +360,7 @@ main.container-fluid {
         padding: 10px;
         border-radius: 0;
         background: $body-bg;
+        color: $gray-dark;
         &:hover, a:hover, a:focus {
           //@include button-variant(#fff, lighten($btn-blue-bg, 5%), $brand-gold);
           border-top: solid 4px $brand-gold;

@@ -4920,8 +4920,8 @@ ul.resource-actions > li {
 #organization-single .page-header {
   display: table;
   background: #0e305e;
-  height: 90px;
-  min-height: 90px;
+  height: 80px;
+  min-height: 80px;
   border-bottom: solid 1px #fff;
   margin: 0;
   padding-top: 0;
@@ -5398,21 +5398,10 @@ ul.resource-actions > li {
 /*.leaflet-zoom-animated g:nth-of-type(3n) path {
   fill: red;
 }*/
-.top-bar {
-  background: #0e305e;
-  height: 40px;
-  padding: 12px; }
-  .top-bar a {
-    color: #fff; }
-
 .content-single .detail {
   padding: 0 !important; }
   .content-single .detail .top-bar {
-    background: #0e305e;
-    height: 40px;
-    padding: 12px; }
-    .content-single .detail .top-bar a {
-      color: #fff; }
+    padding: 4px 12px 0 12px; }
   .content-single .detail section {
     margin: 24px; }
   .content-single .detail table > tbody > tr > td, .content-single .detail .table > tfoot > tr > th, .content-single .detail .table > tfoot > tr > td {
@@ -5430,7 +5419,7 @@ ul.resource-actions > li {
 
 #test {
   position: absolute;
-  top: 43px; }
+  top: 49px; }
 
 .sidebar {
   z-index: 999999;
@@ -5946,7 +5935,7 @@ body.tinted-bg #page-content {
   margin: 0 auto;
   padding: 0;
   position: absolute;
-  top: 130px;
+  top: 120px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -6100,7 +6089,8 @@ main.container-fluid {
       font-family: "Roboto Condensed", "Roboto", Helvetica, "Noto Sans Bengali", sans-serif;
       padding: 10px;
       border-radius: 0;
-      background: #f2f4f7; }
+      background: #f2f4f7;
+      color: #595a5c; }
       .content-single .detail .nav-tabs li > a:hover, .content-single .detail .nav-tabs li > a a:hover, .content-single .detail .nav-tabs li > a a:focus {
         border-top: solid 4px #edaa00;
         transition: all 0.3s ease 0s; }
