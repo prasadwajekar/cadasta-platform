@@ -1,5 +1,7 @@
+import pytest
 from django.conf import settings
 from django.test import TestCase
+from django.core.exceptions import ValidationError
 
 from tutelary.models import Policy
 
@@ -8,7 +10,7 @@ from accounts.tests.factories import UserFactory
 from geography import load as load_countries
 from spatial.tests.factories import SpatialUnitFactory
 from .factories import OrganizationFactory, ProjectFactory
-from ..models import OrganizationRole, ProjectRole
+from ..models import Organization, OrganizationRole, ProjectRole
 
 PERMISSIONS_DIR = settings.BASE_DIR + '/permissions/'
 
@@ -29,6 +31,17 @@ class OrganizationTest(TestCase):
     def test_has_random_id(self):
         org = OrganizationFactory.create()
         assert type(org.id) is not int
+
+    def test_clean_invalid(self):
+        org = Organization(id='abd',
+                           name='<html>',
+                           slug='html',
+                           description='<description>',
+                           urls=['http://example.com'],
+                           logo='http://example.com')
+
+        with pytest.raises(ValidationError):
+            org.clean_fields()
 
 
 class OrganizationRoleTest(UserTestCase, TestCase):

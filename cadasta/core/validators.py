@@ -1,3 +1,4 @@
+import re
 from django.utils.translation import ugettext as _
 
 from jsonschema import Draft4Validator, FormatChecker
@@ -28,3 +29,10 @@ def validate_json(value, schema):
 
     if message_dict:
         raise JsonValidationError(message_dict)
+
+
+pattern = re.compile(".*[<>;\\\/].*")
+
+
+def sanitize_string(value):
+    return not pattern.match(value)

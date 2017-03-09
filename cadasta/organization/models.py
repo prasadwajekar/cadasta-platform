@@ -15,7 +15,7 @@ from shapely.wkt import dumps
 from tutelary.decorators import permissioned_model
 from tutelary.models import Policy
 
-from core.models import RandomIDModel, SlugModel
+from core.models import RandomIDModel, SlugModel, SanitizeFieldsModel
 from geography.models import WorldBorder
 from resources.mixins import ResourceModelMixin
 from .validators import validate_contact
@@ -32,7 +32,7 @@ def get_policy_instance(policy_name, variables):
 
 
 @permissioned_model
-class Organization(SlugModel, RandomIDModel):
+class Organization(SanitizeFieldsModel, SlugModel, RandomIDModel):
     name = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=50, unique=True)
     description = models.TextField(null=True, blank=True)

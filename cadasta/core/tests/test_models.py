@@ -1,7 +1,9 @@
+import pytest
 import random
-from django.db.models import SlugField, CharField, Model
+from django.db.models import SlugField, CharField, Model, IntegerField
 from django.test import TestCase
-from ..models import RandomIDModel, SlugModel
+from django.core.exceptions import ValidationError
+from ..models import RandomIDModel, SlugModel, SanitizeFieldsModel
 
 
 class MyRandomIdModel(RandomIDModel):
@@ -152,3 +154,44 @@ class SlugModelTest(TestCase):
 
         assert MySlugModel.objects.count() == 101
         assert instance.slug[-4:] == '-100'
+
+
+class MySanitizeFieldsModel(SanitizeFieldsModel, Model):
+    name = CharField(max_length=100)
+    number = IntegerField(max_length=200, unique=True)
+
+    class Meta:
+        app_label = 'core'
+
+
+class SanitizeFieldsModelTest(TestCase):
+    abstract_model = SanitizeFieldsModel
+
+    def test_valid_model(self):
+        instance = MySanitizeFieldsModel(name='blah', number=2)
+        instance.clean_fields()
+        # no assertion because the method raises an exception if the test fails
+
+    def test_invalid_name(self):
+        instance = MySanitizeFieldsModel(name='<blah>', number=2)
+
+        with pytest.raises(ValidationError) as e:
+            instance.clean_fields()
+            assert ("Input can not contain < > ; \\ or /" in
+                    e.error_dict['name'])
+
+    def test_invalid_number(self):
+        instance = MySanitizeFieldsModel(name='blah', number='blubb')
+
+        with pytest.raises(ValidationError) as e:
+            instance.clean_fields()
+            assert e.error_dict.get('number') is not None
+
+    def test_invalid_name_and_number(self):
+        instance = MySanitizeFieldsModel(name='<blah>', number=2)
+
+        with pytest.raises(ValidationError) as e:
+            instance.clean_fields()
+            assert ("Input can not contain < > ; \\ or /" in
+                    e.error_dict['name'])
+            assert e.error_dict.get('number') is not None

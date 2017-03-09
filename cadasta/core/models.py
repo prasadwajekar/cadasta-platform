@@ -1,7 +1,10 @@
 import itertools
 import math
 from core.util import slugify
+from core.validators import sanitize_string
+from django.utils.translation import ugettext as _
 from django.db import models
+from django.core.exceptions import ValidationError
 
 from .util import random_id, ID_FIELD_LENGTH
 
@@ -53,3 +56,34 @@ class SlugModel:
         self.__original_slug = self.slug
 
         return super().save(*args, **kwargs)
+
+
+class SanitizeFieldsModel:
+    INGNORED_NAMES = ['id', 'slug']
+    CHECK_FIELDS = (models.TextField, models.CharField)
+
+    def clean_fields(self, exclude=None):
+        errors = {}
+        if exclude is None:
+            exclude = []
+
+        try:
+            super().clean_fields(exclude=exclude)
+        except ValidationError as e:
+            errors = e.error_dict
+
+        for f in self._meta.fields:
+            if (f.name in exclude or
+                    f.name in self.INGNORED_NAMES or
+                    type(f) not in self.CHECK_FIELDS):
+                continue
+
+            raw_value = getattr(self, f.attname)
+            if not sanitize_string(raw_value):
+                if f.name not in errors.keys():
+                    errors[f.name] = []
+
+                errors[f.name].append(_("Input can not contain < > ; \\ or /"))
+
+        if errors:
+            raise ValidationError(errors)
