@@ -35,6 +35,14 @@ class RegistrationSerializer(djoser_serializers.UserRegistrationSerializer):
         }
 
     def validate_username(self, username):
+        usernames = [
+            u.casefold() for u in
+            User.objects.values_list('username', flat=True)
+        ]
+        if username.casefold() in usernames:
+            raise ValidationError(
+                _("A user with that username already exists")
+            )
         if username.lower() in settings.CADASTA_INVALID_ENTITY_NAMES:
             raise ValidationError(
                 _("Username cannot be “add” or “new”."))
@@ -90,6 +98,15 @@ class UserSerializer(djoser_serializers.UserSerializer):
                username != instance.username and
                self.context['request'].user != instance):
                 raise ValidationError('Cannot update username')
+            if instance.username.casefold() != username.casefold():
+                usernames = [
+                    u.casefold() for u in
+                    User.objects.values_list('username', flat=True)
+                ]
+                if username.casefold() in usernames:
+                    raise ValidationError(
+                        _("A user with that username already exists")
+                    )
         if username.lower() in settings.CADASTA_INVALID_ENTITY_NAMES:
             raise ValidationError(
                 _("Username cannot be “add” or “new”."))

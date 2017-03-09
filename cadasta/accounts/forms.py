@@ -23,6 +23,14 @@ class RegisterForm(forms.ModelForm):
 
     def clean_username(self):
         username = self.data.get('username')
+        usernames = [
+            u.casefold() for u in
+            User.objects.values_list('username', flat=True)
+        ]
+        if username.casefold() in usernames:
+            raise forms.ValidationError(
+                _("A user with that username already exists")
+            )
         if username.lower() in settings.CADASTA_INVALID_ENTITY_NAMES:
             raise forms.ValidationError(
                 _("Username cannot be “add” or “new”."))
@@ -76,10 +84,15 @@ class ProfileForm(forms.ModelForm):
 
     def clean_username(self):
         username = self.data.get('username')
-        if (self.instance.username != username and
-                User.objects.filter(username=username).exists()):
-            raise forms.ValidationError(
-                _("Another user with this username already exists"))
+        if self.instance.username.casefold() != username.casefold():
+            usernames = [
+                u.casefold() for u in
+                User.objects.values_list('username', flat=True)
+            ]
+            if username.casefold() in usernames:
+                raise forms.ValidationError(
+                    _("A user with that username already exists")
+                )
         if username.lower() in settings.CADASTA_INVALID_ENTITY_NAMES:
             raise forms.ValidationError(
                 _("Username cannot be “add” or “new”."))
@@ -97,7 +110,6 @@ class ProfileForm(forms.ModelForm):
 
     def save(self, *args, **kwargs):
         user = super().save(commit=False, *args, **kwargs)
-
         if self._send_confirmation:
             send_email_confirmation(self.request, user)
             self._send_confirmation = False
